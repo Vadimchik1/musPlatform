@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+<h2>Профиль {{user.nickname}}</h2>
+<ul class="list-group">
+    {% for song in songs.items() %}
+    <li class="list-group-item"><div>{{ song[0] }}</div> <div><audio src="{{ song[1] }}" controls ></audio></div></li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
